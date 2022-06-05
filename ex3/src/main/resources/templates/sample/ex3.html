@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 th:text="${result}"></h1>
+    <h1 th:text="${dto}"></h1>
+
+    <script th:inline="javascript">
+        var msg = [[${result}]];    // 문자열은 자동으로 ""으로 감싸짐. 
+        var dto = [[${dto}]];       //객체는 자동으로 JSON 포맷의 문자열이 됨. JavaScript 객체로 변환하려면 JSON.parse('\'"+dto+'\'");
+    </script>
+</body>
+</html>
